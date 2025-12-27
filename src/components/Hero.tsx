@@ -106,7 +106,7 @@ const Hero = () => {
             className="heading-xl text-primary-foreground mb-6"
           >
             Quality Manpower{" "}
-            <span className="text-gradient bg-gradient-to-r from-accent to-blue-300">
+            <span className="text-gradient bg-gradient-to-r from-purple-300 to-blue-200">
               At Your Fingertips
             </span>
           </motion.h1>
