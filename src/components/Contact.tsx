@@ -317,7 +317,7 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -474,7 +474,7 @@ const Contact = () => {
           >
             <form
               onSubmit={handleSubmit}
-              className="relative bg-card p-8 rounded-3xl border border-border shadow-xl overflow-hidden"
+              className="relative bg-card p-5 md:p-8 rounded-2xl md:rounded-3xl border border-border shadow-xl overflow-hidden"
             >
               {/* Decorative gradient */}
               <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-accent/10 to-purple-light/10 rounded-full blur-3xl -z-10" />

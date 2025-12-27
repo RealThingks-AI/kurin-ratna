@@ -194,7 +194,7 @@ const Services = () => {
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5"
+            className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5"
           >
             {services.map((service, index) => (
               <motion.div
@@ -212,7 +212,7 @@ const Services = () => {
                 tabIndex={0}
                 role="button"
                 aria-label={`View details for ${service.title}`}
-                className="group relative bg-card rounded-2xl p-6 cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 overflow-hidden"
+                className="group relative bg-card rounded-xl md:rounded-2xl p-4 md:p-6 cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 overflow-hidden"
               >
                 {/* Gradient Border Effect */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent/20 via-transparent to-purple-dark/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -230,29 +230,29 @@ const Services = () => {
                   {/* Popular Badge */}
                   {service.popular && (
                     <div className="absolute -top-1 -right-1">
-                      <span className="inline-block px-2 py-0.5 text-[10px] font-bold rounded-full bg-accent text-accent-foreground shadow-lg">
+                      <span className="inline-block px-1.5 md:px-2 py-0.5 text-[8px] md:text-[10px] font-bold rounded-full bg-accent text-accent-foreground shadow-lg">
                         POPULAR
                       </span>
                     </div>
                   )}
 
                   {/* Icon */}
-                  <div className="p-3 rounded-xl bg-gradient-to-br from-accent/10 to-purple-light/10 w-fit mb-5 group-hover:from-accent group-hover:to-purple-dark group-hover:shadow-glow transition-all duration-500">
-                    <service.icon className="w-6 h-6 text-accent group-hover:text-white transition-colors duration-300" />
+                  <div className="p-2 md:p-3 rounded-lg md:rounded-xl bg-gradient-to-br from-accent/10 to-purple-light/10 w-fit mb-3 md:mb-5 group-hover:from-accent group-hover:to-purple-dark group-hover:shadow-glow transition-all duration-500">
+                    <service.icon className="w-5 h-5 md:w-6 md:h-6 text-accent group-hover:text-white transition-colors duration-300" />
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-display font-bold text-primary mb-3 text-lg group-hover:text-accent transition-colors duration-300">
+                  <h3 className="font-display font-bold text-primary mb-2 md:mb-3 text-sm md:text-lg leading-tight group-hover:text-accent transition-colors duration-300">
                     {service.title}
                   </h3>
                   
-                  {/* Description */}
-                  <p className="text-muted-foreground mb-4 leading-relaxed text-sm line-clamp-2">
+                  {/* Description - Hidden on mobile */}
+                  <p className="hidden md:block text-muted-foreground mb-4 leading-relaxed text-sm line-clamp-2">
                     {service.description}
                   </p>
 
-                  {/* Features Preview */}
-                  <div className="flex flex-wrap gap-1.5 mb-4">
+                  {/* Features Preview - Hidden on mobile */}
+                  <div className="hidden md:flex flex-wrap gap-1.5 mb-4">
                     {service.features.slice(0, 2).map((feature) => (
                       <span
                         key={feature}
@@ -269,9 +269,10 @@ const Services = () => {
                   </div>
 
                   {/* Learn More Link */}
-                  <div className="flex items-center gap-1 text-sm font-medium text-accent group-hover:gap-2 transition-all duration-300">
-                    Learn more
-                    <ArrowRight className="w-4 h-4" />
+                  <div className="flex items-center gap-1 text-xs md:text-sm font-medium text-accent group-hover:gap-2 transition-all duration-300">
+                    <span className="hidden md:inline">Learn more</span>
+                    <span className="md:hidden">View</span>
+                    <ArrowRight className="w-3 h-3 md:w-4 md:h-4" />
                   </div>
                 </div>
 

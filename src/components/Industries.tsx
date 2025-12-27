@@ -145,7 +145,7 @@ const Industries = () => {
         </motion.div>
 
         {/* Industries Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
+        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-2 md:gap-3">
           {industries.map((industry, index) => (
             <motion.div
               key={industry.name}
@@ -156,7 +156,7 @@ const Industries = () => {
               className="group relative overflow-hidden rounded-xl cursor-pointer"
               onClick={() => setSelectedIndustry(industry)}
             >
-              <div className="relative overflow-hidden h-28 md:h-36">
+              <div className="relative overflow-hidden h-24 md:h-36">
                 <img
                   src={industry.image}
                   alt={industry.name}
@@ -167,12 +167,12 @@ const Industries = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300" />
                 
                 {/* Text */}
-                <div className="absolute inset-0 flex items-end p-3">
+                <div className="absolute inset-0 flex items-end p-2 md:p-3">
                   <div className="w-full">
-                    <h3 className="font-display font-bold text-white text-xs md:text-sm leading-tight">
+                    <h3 className="font-display font-bold text-white text-[10px] md:text-sm leading-tight">
                       {industry.name}
                     </h3>
-                    <div className="h-0.5 w-0 group-hover:w-8 bg-accent transition-all duration-300 mt-1" />
+                    <div className="h-0.5 w-0 group-hover:w-6 md:group-hover:w-8 bg-accent transition-all duration-300 mt-0.5 md:mt-1" />
                   </div>
                 </div>
               </div>
