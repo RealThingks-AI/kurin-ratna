@@ -294,24 +294,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator - Hidden on mobile */}
-      <motion.button
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1 }}
-        onClick={handleScrollToServices}
-        className="hidden md:flex absolute bottom-36 left-1/2 -translate-x-1/2 z-20 flex-col items-center gap-2 text-white/60 hover:text-white transition-colors cursor-pointer group"
-        aria-label="Scroll to services"
-      >
-        <span className="text-xs font-medium tracking-wider uppercase">Explore</span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <ChevronDown className="w-6 h-6 group-hover:text-accent transition-colors" />
-        </motion.div>
-      </motion.button>
-
       {/* Client Marquee - Enhanced */}
       <motion.div 
         initial={{ y: 100, opacity: 0 }}
