@@ -6,58 +6,60 @@
 
 @layer base {
   :root {
-    /* Kurin Hygienic Brand Colors */
+    /* Kurin Hygienic Brand Colors - Navy Blue & Purple */
     --background: 0 0% 100%;
-    --foreground: 215 25% 27%;
+    --foreground: 230 35% 25%;
     
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 27%;
+    --card-foreground: 230 35% 25%;
     
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 27%;
+    --popover-foreground: 230 35% 25%;
     
-    /* Teal - Primary */
-    --primary: 174 50% 56%;
+    /* Deep Navy Blue - Primary */
+    --primary: 230 45% 30%;
     --primary-foreground: 0 0% 100%;
     
     /* Light backgrounds */
-    --secondary: 174 30% 96%;
-    --secondary-foreground: 220 20% 25%;
+    --secondary: 230 30% 96%;
+    --secondary-foreground: 230 35% 25%;
     
-    --muted: 210 20% 96%;
-    --muted-foreground: 220 10% 47%;
+    --muted: 230 20% 96%;
+    --muted-foreground: 230 15% 45%;
     
-    /* Teal - Accent */
-    --accent: 174 50% 56%;
+    /* Purple - Accent (matching logo's purple wave) */
+    --accent: 260 40% 55%;
     --accent-foreground: 0 0% 100%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 174 50% 56%;
+    --border: 230 25% 90%;
+    --input: 230 25% 90%;
+    --ring: 260 40% 55%;
     
     --radius: 0.5rem;
     
     /* Custom brand tokens */
-    --teal: 174 50% 56%;
-    --teal-dark: 174 50% 40%;
-    --slate: 215 25% 27%;
-    --light-gray: 174 20% 98%;
+    --navy: 230 45% 30%;
+    --navy-dark: 230 50% 20%;
+    --purple: 260 40% 55%;
+    --purple-light: 260 35% 75%;
+    --slate: 230 35% 25%;
+    --light-gray: 230 20% 98%;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(174 50% 50%), hsl(174 50% 60%));
-    --gradient-accent: linear-gradient(135deg, hsl(174 50% 56%), hsl(174 50% 66%));
-    --gradient-hero-overlay: linear-gradient(135deg, hsla(0, 0%, 0%, 0.7), hsla(0, 0%, 0%, 0.4));
+    --gradient-primary: linear-gradient(135deg, hsl(230 45% 25%), hsl(260 40% 45%));
+    --gradient-accent: linear-gradient(135deg, hsl(260 40% 55%), hsl(230 45% 40%));
+    --gradient-hero-overlay: linear-gradient(135deg, hsla(230, 50%, 15%, 0.85), hsla(260, 40%, 25%, 0.7));
     
     /* Shadows */
-    --shadow-sm: 0 1px 2px 0 hsla(174, 50%, 30%, 0.05);
-    --shadow-md: 0 4px 6px -1px hsla(174, 50%, 30%, 0.1), 0 2px 4px -2px hsla(174, 50%, 30%, 0.1);
-    --shadow-lg: 0 10px 15px -3px hsla(174, 50%, 30%, 0.1), 0 4px 6px -4px hsla(174, 50%, 30%, 0.1);
-    --shadow-xl: 0 20px 25px -5px hsla(174, 50%, 30%, 0.1), 0 8px 10px -6px hsla(174, 50%, 30%, 0.1);
-    --shadow-glow: 0 0 40px hsla(174, 50%, 56%, 0.3);
-    --shadow-card-hover: 0 20px 40px -12px hsla(174, 50%, 30%, 0.2);
+    --shadow-sm: 0 1px 2px 0 hsla(230, 45%, 30%, 0.05);
+    --shadow-md: 0 4px 6px -1px hsla(230, 45%, 30%, 0.1), 0 2px 4px -2px hsla(230, 45%, 30%, 0.1);
+    --shadow-lg: 0 10px 15px -3px hsla(230, 45%, 30%, 0.1), 0 4px 6px -4px hsla(230, 45%, 30%, 0.1);
+    --shadow-xl: 0 20px 25px -5px hsla(230, 45%, 30%, 0.1), 0 8px 10px -6px hsla(230, 45%, 30%, 0.1);
+    --shadow-glow: 0 0 40px hsla(260, 40%, 55%, 0.3);
+    --shadow-card-hover: 0 20px 40px -12px hsla(230, 45%, 30%, 0.2);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -70,33 +72,33 @@
   }
 
   .dark {
-    --background: 174 30% 8%;
-    --foreground: 174 20% 98%;
+    --background: 230 40% 8%;
+    --foreground: 230 20% 98%;
     
-    --card: 174 30% 12%;
-    --card-foreground: 174 20% 98%;
+    --card: 230 40% 12%;
+    --card-foreground: 230 20% 98%;
     
-    --popover: 174 30% 12%;
-    --popover-foreground: 174 20% 98%;
+    --popover: 230 40% 12%;
+    --popover-foreground: 230 20% 98%;
     
-    --primary: 174 50% 56%;
+    --primary: 260 40% 55%;
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 174 30% 20%;
-    --secondary-foreground: 174 20% 98%;
+    --secondary: 230 40% 20%;
+    --secondary-foreground: 230 20% 98%;
     
-    --muted: 174 30% 20%;
-    --muted-foreground: 174 20% 65%;
+    --muted: 230 40% 20%;
+    --muted-foreground: 230 20% 65%;
     
-    --accent: 174 50% 56%;
+    --accent: 260 40% 55%;
     --accent-foreground: 0 0% 100%;
     
     --destructive: 0 63% 31%;
-    --destructive-foreground: 174 20% 98%;
+    --destructive-foreground: 230 20% 98%;
     
-    --border: 174 30% 20%;
-    --input: 174 30% 20%;
-    --ring: 174 50% 56%;
+    --border: 230 40% 20%;
+    --input: 230 40% 20%;
+    --ring: 260 40% 55%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
