@@ -16,19 +16,19 @@
     --popover: 0 0% 100%;
     --popover-foreground: 215 25% 27%;
     
-    /* Deep Navy Blue - Primary */
-    --primary: 213 75% 15%;
+    /* Teal - Primary */
+    --primary: 174 50% 56%;
     --primary-foreground: 0 0% 100%;
     
     /* Light backgrounds */
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 213 75% 15%;
+    --secondary: 174 30% 96%;
+    --secondary-foreground: 174 50% 30%;
     
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 174 20% 96%;
+    --muted-foreground: 174 16% 47%;
     
-    /* Electric Blue - Accent */
-    --accent: 211 100% 50%;
+    /* Teal - Accent */
+    --accent: 174 50% 56%;
     --accent-foreground: 0 0% 100%;
     
     --destructive: 0 84% 60%;
@@ -36,28 +36,28 @@
     
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 211 100% 50%;
+    --ring: 174 50% 56%;
     
     --radius: 0.5rem;
     
     /* Custom brand tokens */
-    --navy: 213 75% 15%;
-    --electric-blue: 211 100% 50%;
+    --teal: 174 50% 56%;
+    --teal-dark: 174 50% 40%;
     --slate: 215 25% 27%;
-    --light-gray: 210 20% 98%;
+    --light-gray: 174 20% 98%;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(213 75% 15%), hsl(213 75% 25%));
-    --gradient-accent: linear-gradient(135deg, hsl(211 100% 50%), hsl(211 100% 60%));
-    --gradient-hero-overlay: linear-gradient(135deg, hsla(213, 75%, 15%, 0.9), hsla(211, 100%, 30%, 0.7));
+    --gradient-primary: linear-gradient(135deg, hsl(174 50% 50%), hsl(174 50% 60%));
+    --gradient-accent: linear-gradient(135deg, hsl(174 50% 56%), hsl(174 50% 66%));
+    --gradient-hero-overlay: linear-gradient(135deg, hsla(174, 50%, 30%, 0.9), hsla(174, 50%, 45%, 0.7));
     
     /* Shadows */
-    --shadow-sm: 0 1px 2px 0 hsla(213, 75%, 15%, 0.05);
-    --shadow-md: 0 4px 6px -1px hsla(213, 75%, 15%, 0.1), 0 2px 4px -2px hsla(213, 75%, 15%, 0.1);
-    --shadow-lg: 0 10px 15px -3px hsla(213, 75%, 15%, 0.1), 0 4px 6px -4px hsla(213, 75%, 15%, 0.1);
-    --shadow-xl: 0 20px 25px -5px hsla(213, 75%, 15%, 0.1), 0 8px 10px -6px hsla(213, 75%, 15%, 0.1);
-    --shadow-glow: 0 0 40px hsla(211, 100%, 50%, 0.3);
-    --shadow-card-hover: 0 20px 40px -12px hsla(213, 75%, 15%, 0.2);
+    --shadow-sm: 0 1px 2px 0 hsla(174, 50%, 30%, 0.05);
+    --shadow-md: 0 4px 6px -1px hsla(174, 50%, 30%, 0.1), 0 2px 4px -2px hsla(174, 50%, 30%, 0.1);
+    --shadow-lg: 0 10px 15px -3px hsla(174, 50%, 30%, 0.1), 0 4px 6px -4px hsla(174, 50%, 30%, 0.1);
+    --shadow-xl: 0 20px 25px -5px hsla(174, 50%, 30%, 0.1), 0 8px 10px -6px hsla(174, 50%, 30%, 0.1);
+    --shadow-glow: 0 0 40px hsla(174, 50%, 56%, 0.3);
+    --shadow-card-hover: 0 20px 40px -12px hsla(174, 50%, 30%, 0.2);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -70,33 +70,33 @@
   }
 
   .dark {
-    --background: 213 75% 8%;
-    --foreground: 210 40% 98%;
+    --background: 174 30% 8%;
+    --foreground: 174 20% 98%;
     
-    --card: 213 75% 12%;
-    --card-foreground: 210 40% 98%;
+    --card: 174 30% 12%;
+    --card-foreground: 174 20% 98%;
     
-    --popover: 213 75% 12%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 174 30% 12%;
+    --popover-foreground: 174 20% 98%;
     
-    --primary: 211 100% 50%;
+    --primary: 174 50% 56%;
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 213 50% 20%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 174 30% 20%;
+    --secondary-foreground: 174 20% 98%;
     
-    --muted: 213 50% 20%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 174 30% 20%;
+    --muted-foreground: 174 20% 65%;
     
-    --accent: 211 100% 50%;
+    --accent: 174 50% 56%;
     --accent-foreground: 0 0% 100%;
     
     --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 174 20% 98%;
     
-    --border: 213 50% 20%;
-    --input: 213 50% 20%;
-    --ring: 211 100% 50%;
+    --border: 174 30% 20%;
+    --input: 174 30% 20%;
+    --ring: 174 50% 56%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
