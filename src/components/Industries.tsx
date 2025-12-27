@@ -2,20 +2,20 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
-import societyImg from "@/assets/industries/society-maintenance.jpg";
+import societyImg from "@/assets/industries/society-maintenance-new.jpg";
 import mepImg from "@/assets/industries/mep-services-new.jpg";
 import hospitalityImg from "@/assets/industries/hospitality-new.jpg";
-import constructionImg from "@/assets/industries/construction.jpg";
+import constructionImg from "@/assets/industries/construction-new.jpg";
 import hotelsImg from "@/assets/industries/hotels-new.jpg";
 import acImg from "@/assets/industries/ac-refrigeration-new.jpg";
 import retailImg from "@/assets/industries/retail-malls-new.jpg";
-import powerImg from "@/assets/industries/power-plants.jpg";
-import agricultureImg from "@/assets/industries/agriculture.jpg";
+import powerImg from "@/assets/industries/power-plants-new.jpg";
+import agricultureImg from "@/assets/industries/agriculture-new.jpg";
 import governmentImg from "@/assets/industries/government-new.jpg";
-import hypermarketImg from "@/assets/industries/hypermarket.jpg";
+import hypermarketImg from "@/assets/industries/hypermarket-new.jpg";
 import manufacturingImg from "@/assets/industries/manufacturing-new.jpg";
 import tradingImg from "@/assets/industries/trading-new.jpg";
-import financeImg from "@/assets/industries/finance.jpg";
+import financeImg from "@/assets/industries/finance-new.jpg";
 
 const industries = [
   { name: "Society Maintenance", image: societyImg },
