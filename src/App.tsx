@@ -70,41 +70,32 @@ const AnimatedRoutes = () => {
 };
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [showContent, setShowContent] = useState(false);
-
-  useEffect(() => {
+  const [isLoading, setIsLoading] = useState(() => {
     // Check if this is a fresh page load or navigation
-    const hasLoaded = sessionStorage.getItem('app-loaded');
-    if (hasLoaded) {
-      setIsLoading(false);
-      setShowContent(true);
+    if (typeof window !== 'undefined') {
+      return !sessionStorage.getItem('app-loaded');
     }
-  }, []);
+    return true;
+  });
 
   const handleLoadingComplete = () => {
     sessionStorage.setItem('app-loaded', 'true');
     setIsLoading(false);
-    setTimeout(() => setShowContent(true), 100);
   };
 
   return (
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
-          {isLoading && <LoadingScreen onLoadingComplete={handleLoadingComplete} minDuration={2500} />}
+          {isLoading && <LoadingScreen onLoadingComplete={handleLoadingComplete} minDuration={2000} />}
           
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: showContent ? 1 : 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <div style={{ opacity: isLoading ? 0 : 1, transition: 'opacity 0.5s ease' }}>
             <Toaster />
             <Sonner />
             <BrowserRouter>
               <AnimatedRoutes />
             </BrowserRouter>
-          </motion.div>
+          </div>
         </TooltipProvider>
       </QueryClientProvider>
     </HelmetProvider>
