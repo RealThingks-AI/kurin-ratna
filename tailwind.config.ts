@@ -52,7 +52,9 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         navy: "hsl(var(--navy))",
-        "electric-blue": "hsl(var(--electric-blue))",
+        "navy-dark": "hsl(var(--navy-dark))",
+        purple: "hsl(var(--purple))",
+        "purple-light": "hsl(var(--purple-light))",
         slate: "hsl(var(--slate))",
         "light-gray": "hsl(var(--light-gray))",
         sidebar: {

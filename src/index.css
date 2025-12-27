@@ -171,7 +171,11 @@
   }
 
   .gradient-overlay {
-    background: var(--gradient-hero-overlay);
+    background: linear-gradient(135deg, hsla(230, 50%, 15%, 0.88), hsla(260, 40%, 25%, 0.75));
+  }
+
+  .bg-light-gray {
+    background-color: hsl(var(--light-gray));
   }
 
   .btn-primary {
