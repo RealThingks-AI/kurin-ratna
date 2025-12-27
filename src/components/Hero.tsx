@@ -237,7 +237,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="min-h-[6rem] sm:min-h-[5rem] md:min-h-[6rem] lg:min-h-[7rem] mb-4 flex items-center justify-center"
+            className="h-[4.5rem] md:h-[6rem] lg:h-[7rem] mb-4 overflow-hidden"
           >
             <AnimatePresence mode="wait">
               <motion.h1
@@ -246,10 +246,10 @@ const Hero = () => {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -60, opacity: 0 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white drop-shadow-lg text-center leading-tight"
+                className="heading-xl text-white drop-shadow-lg"
               >
                 {taglines[currentTagline]}{" "}
-                <span className="block sm:inline text-transparent bg-clip-text bg-gradient-to-r from-purple-light via-purple-300 to-blue-200">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-light via-purple-300 to-blue-200">
                   At Your Fingertips
                 </span>
               </motion.h1>
