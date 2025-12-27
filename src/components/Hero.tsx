@@ -277,16 +277,16 @@ const Hero = () => {
               variant="hero"
               size="xl"
               onClick={handleScrollToContact}
-              className="group min-w-[220px] text-base"
+              className="group min-w-[200px] text-base"
             >
-              Get a Free Quote
+              Get Quote
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
 
             <a href="tel:7038613623">
-              <Button variant="heroOutline" size="xl" className="min-w-[220px] text-base">
-                <Phone className="w-5 h-5" />
-                +91 7038 613 623
+              <Button variant="hero" size="xl" className="group min-w-[200px] text-base">
+                Get Quote
+                <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </Button>
             </a>
           </motion.div>
