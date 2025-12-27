@@ -36,7 +36,7 @@ const Industries = () => {
           <span className="inline-block px-4 py-2 mb-4 text-sm font-medium rounded-full bg-accent/10 text-accent">
             Our Reach
           </span>
-          <h2 className="heading-lg text-primary mb-6">
+          <h2 className="heading-lg text-slate-800 mb-6">
             Industries <span className="text-accent">We Serve</span>
           </h2>
           <p className="text-body">
@@ -64,7 +64,7 @@ const Industries = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300" />
                 
                 {/* Text */}
                 <div className="absolute inset-0 flex items-end p-3">

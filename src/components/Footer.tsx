@@ -33,7 +33,7 @@ const Footer = () => {
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <footer className="bg-primary py-12" ref={ref}>
+    <footer className="bg-slate-900 py-12" ref={ref}>
       <div className="section-container">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
