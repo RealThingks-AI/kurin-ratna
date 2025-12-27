@@ -271,21 +271,21 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.35 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="flex flex-row items-center justify-center gap-2 sm:gap-4"
           >
             <Button
               variant="hero"
               size="xl"
               onClick={handleScrollToContact}
-              className="group min-w-[220px] text-base"
+              className="group min-w-[130px] sm:min-w-[220px] text-sm sm:text-base px-4 sm:px-6"
             >
               Get Quote
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
 
             <a href="tel:7038613623">
-              <Button variant="heroOutline" size="xl" className="min-w-[220px] text-base">
-                <Phone className="w-5 h-5" />
+              <Button variant="heroOutline" size="xl" className="min-w-[130px] sm:min-w-[220px] text-sm sm:text-base px-4 sm:px-6">
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
                 Call Now
               </Button>
             </a>
