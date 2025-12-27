@@ -3,15 +3,15 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 
 import societyImg from "@/assets/industries/society-maintenance.jpg";
-import mepImg from "@/assets/industries/mep-services.jpg";
+import mepImg from "@/assets/industries/mep-services-new.jpg";
 import hospitalityImg from "@/assets/industries/hospitality.jpg";
 import constructionImg from "@/assets/industries/construction.jpg";
 import hotelsImg from "@/assets/industries/hotels.jpg";
-import acImg from "@/assets/industries/ac-refrigeration.jpg";
+import acImg from "@/assets/industries/ac-refrigeration-new.jpg";
 import retailImg from "@/assets/industries/retail-malls.jpg";
 import powerImg from "@/assets/industries/power-plants.jpg";
 import agricultureImg from "@/assets/industries/agriculture.jpg";
-import governmentImg from "@/assets/industries/government.jpg";
+import governmentImg from "@/assets/industries/government-new.jpg";
 import hypermarketImg from "@/assets/industries/hypermarket.jpg";
 import manufacturingImg from "@/assets/industries/manufacturing.jpg";
 import tradingImg from "@/assets/industries/trading.jpg";
