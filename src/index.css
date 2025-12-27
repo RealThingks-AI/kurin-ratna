@@ -4,6 +4,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Shimmer animation for skeletons */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 1.5s infinite;
+}
+
 @layer base {
   :root {
     /* Kurin Hygienic Brand Colors - Navy Blue & Purple */
