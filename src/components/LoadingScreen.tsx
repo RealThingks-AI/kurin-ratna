@@ -42,7 +42,8 @@ const LoadingScreen = ({ onLoadingComplete, minDuration = 2000 }: LoadingScreenP
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-gradient-to-br from-navy-900 via-navy-800 to-accent/20"
+          className="fixed inset-0 z-[9999] flex items-center justify-center"
+          style={{ background: 'linear-gradient(135deg, hsl(230, 55%, 12%) 0%, hsl(230, 45%, 18%) 50%, hsl(265, 50%, 25%) 100%)' }}
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, scale: 1.1 }}
           transition={{ duration: 0.5, ease: 'easeInOut' }}
