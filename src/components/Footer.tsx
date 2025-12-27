@@ -54,7 +54,7 @@ const Footer = () => {
               <img 
                 src={logo} 
                 alt="Kurin Hygienic" 
-                className="h-14 w-auto brightness-0 invert"
+                className="h-14 w-auto"
               />
               <p className="text-primary-foreground/60 text-sm mt-2">
                 All Manpower Solutions

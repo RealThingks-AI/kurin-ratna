@@ -73,9 +73,7 @@ const Navigation = () => {
               <img 
                 src={logo} 
                 alt="Kurin Hygienic" 
-                className={`h-12 md:h-14 w-auto transition-all duration-300 ${
-                  isScrolled ? "" : "brightness-0 invert"
-                }`}
+                className="h-12 md:h-14 w-auto"
               />
             </a>
 
