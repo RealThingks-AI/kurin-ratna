@@ -48,9 +48,9 @@ const LoadingScreen = ({ onLoadingComplete, minDuration = 2000 }: LoadingScreenP
           exit={{ opacity: 0, scale: 1.1 }}
           transition={{ duration: 0.5, ease: 'easeInOut' }}
         >
-          {/* Animated background particles */}
+          {/* Animated background particles - reduced for performance */}
           <div className="absolute inset-0 overflow-hidden">
-            {[...Array(20)].map((_, i) => (
+            {[...Array(10)].map((_, i) => (
               <motion.div
                 key={i}
                 className="absolute w-2 h-2 bg-accent/20 rounded-full"
