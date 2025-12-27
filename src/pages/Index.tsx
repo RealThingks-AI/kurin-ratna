@@ -1,19 +1,22 @@
 import { Helmet } from "react-helmet-async";
-import { motion } from "framer-motion";
+import { lazy, Suspense } from "react";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
-import WhyChooseUs from "@/components/WhyChooseUs";
-import Services from "@/components/Services";
-import Process from "@/components/Process";
-import Industries from "@/components/Industries";
-import Clients from "@/components/Clients";
-import Testimonials from "@/components/Testimonials";
-import FAQ from "@/components/FAQ";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
-import FloatingButtons from "@/components/FloatingButtons";
-import BackToTop from "@/components/BackToTop";
+import { SectionSkeleton } from "@/components/ui/section-skeleton";
+
+// Lazy load below-fold components
+const About = lazy(() => import("@/components/About"));
+const WhyChooseUs = lazy(() => import("@/components/WhyChooseUs"));
+const Services = lazy(() => import("@/components/Services"));
+const Process = lazy(() => import("@/components/Process"));
+const Industries = lazy(() => import("@/components/Industries"));
+const Clients = lazy(() => import("@/components/Clients"));
+const Testimonials = lazy(() => import("@/components/Testimonials"));
+const FAQ = lazy(() => import("@/components/FAQ"));
+const Contact = lazy(() => import("@/components/Contact"));
+const Footer = lazy(() => import("@/components/Footer"));
+const FloatingButtons = lazy(() => import("@/components/FloatingButtons"));
+const BackToTop = lazy(() => import("@/components/BackToTop"));
 
 const Index = () => {
   return (
@@ -31,27 +34,55 @@ const Index = () => {
         <link rel="canonical" href="https://kurinhygienic.com" />
       </Helmet>
 
-      <motion.main 
-        className="relative"
-        initial={{ opacity: 0.8 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
-      >
+      <main className="relative">
         <Navigation />
         <Hero />
-        <About />
-        <WhyChooseUs />
-        <Services />
-        <Process />
-        <Industries />
-        <Clients />
-        <Testimonials />
-        <FAQ />
-        <Contact />
-        <Footer />
-        <FloatingButtons />
-        <BackToTop />
-      </motion.main>
+        
+        <Suspense fallback={<SectionSkeleton type="content" />}>
+          <About />
+        </Suspense>
+        
+        <Suspense fallback={<SectionSkeleton type="grid" />}>
+          <WhyChooseUs />
+        </Suspense>
+        
+        <Suspense fallback={<SectionSkeleton type="grid" />}>
+          <Services />
+        </Suspense>
+        
+        <Suspense fallback={<SectionSkeleton type="content" />}>
+          <Process />
+        </Suspense>
+        
+        <Suspense fallback={<SectionSkeleton type="grid" />}>
+          <Industries />
+        </Suspense>
+        
+        <Suspense fallback={<SectionSkeleton type="carousel" />}>
+          <Clients />
+        </Suspense>
+        
+        <Suspense fallback={<SectionSkeleton type="carousel" />}>
+          <Testimonials />
+        </Suspense>
+        
+        <Suspense fallback={<SectionSkeleton type="grid" />}>
+          <FAQ />
+        </Suspense>
+        
+        <Suspense fallback={<SectionSkeleton type="form" />}>
+          <Contact />
+        </Suspense>
+        
+        <Suspense fallback={null}>
+          <Footer />
+        </Suspense>
+        
+        <Suspense fallback={null}>
+          <FloatingButtons />
+          <BackToTop />
+        </Suspense>
+      </main>
     </>
   );
 };
