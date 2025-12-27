@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const socialLinks = [
   {
@@ -48,10 +49,13 @@ const Footer = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 }}
+              className="flex flex-col items-center md:items-start"
             >
-              <span className="text-2xl font-display font-bold text-primary-foreground">
-                Kurin<span className="text-accent">Hygienic</span>
-              </span>
+              <img 
+                src={logo} 
+                alt="Kurin Hygienic" 
+                className="h-14 w-auto brightness-0 invert"
+              />
               <p className="text-primary-foreground/60 text-sm mt-2">
                 All Manpower Solutions
               </p>
