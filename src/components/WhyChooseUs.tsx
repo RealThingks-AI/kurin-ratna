@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
+import { useRef } from "react";
 import { Globe, Users, Handshake, Target } from "lucide-react";
 
 const features = [
@@ -30,40 +30,7 @@ const features = [
   },
 ];
 
-const stats = [
-  { value: 1000, suffix: "+", label: "Staff Deployed" },
-  { value: 50, suffix: "+", label: "Happy Clients" },
-  { value: 7, suffix: "+", label: "Years Experience" },
-  { value: 24, suffix: "/7", label: "Support Available" },
-];
 
-const CountUp = ({ end, suffix, isInView }: { end: number; suffix: string; isInView: boolean }) => {
-  const [count, setCount] = useState(0);
-  
-  useEffect(() => {
-    if (!isInView) return;
-    
-    const duration = 2000;
-    const steps = 60;
-    const increment = end / steps;
-    const stepTime = duration / steps;
-    let current = 0;
-    
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= end) {
-        setCount(end);
-        clearInterval(timer);
-      } else {
-        setCount(Math.floor(current));
-      }
-    }, stepTime);
-    
-    return () => clearInterval(timer);
-  }, [end, isInView]);
-  
-  return <>{count}{suffix}</>;
-};
 
 const WhyChooseUs = () => {
   const ref = useRef(null);
@@ -119,23 +86,6 @@ const WhyChooseUs = () => {
           ))}
         </div>
 
-        {/* Stats - Compact */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {stats.map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.4, delay: 0.3 + index * 0.1, ease: "easeOut" }}
-              className="text-center p-4 bg-accent/5 rounded-lg border border-accent/10"
-            >
-              <div className="text-2xl md:text-3xl font-bold font-display text-accent mb-1">
-                <CountUp end={stat.value} suffix={stat.suffix} isInView={isInView} />
-              </div>
-              <div className="text-xs text-muted-foreground">{stat.label}</div>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );
