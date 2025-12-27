@@ -50,6 +50,18 @@ const Hero = () => {
     }
   };
 
+  // Floating elements data
+  const floatingElements = [
+    { size: 80, x: "10%", y: "20%", duration: 8, delay: 0 },
+    { size: 60, x: "85%", y: "15%", duration: 10, delay: 1 },
+    { size: 40, x: "75%", y: "70%", duration: 7, delay: 2 },
+    { size: 100, x: "5%", y: "75%", duration: 12, delay: 0.5 },
+    { size: 50, x: "90%", y: "50%", duration: 9, delay: 1.5 },
+    { size: 30, x: "20%", y: "60%", duration: 6, delay: 2.5 },
+    { size: 70, x: "60%", y: "85%", duration: 11, delay: 0.8 },
+    { size: 45, x: "40%", y: "10%", duration: 8, delay: 1.2 },
+  ];
+
   return (
     <section
       id="home"
@@ -77,6 +89,74 @@ const Hero = () => {
         className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }}
+      />
+
+      {/* Floating Elements */}
+      {floatingElements.map((el, index) => (
+        <motion.div
+          key={index}
+          className="absolute rounded-full pointer-events-none"
+          style={{
+            width: el.size,
+            height: el.size,
+            left: el.x,
+            top: el.y,
+            background: index % 2 === 0 
+              ? "radial-gradient(circle, rgba(139, 109, 181, 0.15) 0%, transparent 70%)"
+              : "radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%)",
+          }}
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ 
+            opacity: [0.3, 0.6, 0.3],
+            scale: [1, 1.2, 1],
+            y: [0, -30, 0],
+          }}
+          transition={{
+            duration: el.duration,
+            delay: el.delay,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      ))}
+
+      {/* Floating geometric shapes */}
+      <motion.div
+        className="absolute w-32 h-32 border border-white/10 rounded-full pointer-events-none"
+        style={{ left: "15%", top: "30%" }}
+        animate={{ 
+          rotate: 360,
+          scale: [1, 1.1, 1],
+        }}
+        transition={{ 
+          rotate: { duration: 20, repeat: Infinity, ease: "linear" },
+          scale: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+        }}
+      />
+      <motion.div
+        className="absolute w-20 h-20 border border-purple-300/10 pointer-events-none"
+        style={{ right: "20%", top: "25%", borderRadius: "30%" }}
+        animate={{ 
+          rotate: -360,
+          y: [0, 20, 0],
+        }}
+        transition={{ 
+          rotate: { duration: 15, repeat: Infinity, ease: "linear" },
+          y: { duration: 5, repeat: Infinity, ease: "easeInOut" },
+        }}
+      />
+      <motion.div
+        className="absolute w-16 h-16 border border-white/5 pointer-events-none"
+        style={{ left: "70%", bottom: "35%", transform: "rotate(45deg)" }}
+        animate={{ 
+          rotate: [45, 135, 45],
+          opacity: [0.3, 0.6, 0.3],
+        }}
+        transition={{ 
+          duration: 8, 
+          repeat: Infinity, 
+          ease: "easeInOut",
         }}
       />
 
