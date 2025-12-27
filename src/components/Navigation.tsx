@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -68,23 +69,14 @@ const Navigation = () => {
         <div className="section-container">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <a href="#home" className="flex items-center gap-2">
-              <div className="relative">
-                <span
-                  className={`text-2xl font-display font-bold tracking-tight ${
-                    isScrolled ? "text-primary" : "text-primary-foreground"
-                  }`}
-                >
-                  Kurin
-                </span>
-                <span
-                  className={`text-2xl font-display font-light ${
-                    isScrolled ? "text-accent" : "text-accent"
-                  }`}
-                >
-                  Hygienic
-                </span>
-              </div>
+            <a href="#home" className="flex items-center">
+              <img 
+                src={logo} 
+                alt="Kurin Hygienic" 
+                className={`h-12 md:h-14 w-auto transition-all duration-300 ${
+                  isScrolled ? "" : "brightness-0 invert"
+                }`}
+              />
             </a>
 
             {/* Desktop Navigation */}
@@ -165,9 +157,7 @@ const Navigation = () => {
             >
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between p-6 border-b border-border">
-                  <span className="text-xl font-display font-bold text-primary">
-                    Kurin<span className="text-accent">Hygienic</span>
-                  </span>
+                  <img src={logo} alt="Kurin Hygienic" className="h-10 w-auto" />
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
                     aria-label="Close menu"
