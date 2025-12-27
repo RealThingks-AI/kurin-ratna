@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { lazy, Suspense } from "react";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
+import StructuredData from "@/components/StructuredData";
 import { SectionSkeleton } from "@/components/ui/section-skeleton";
 
 // Lazy load below-fold components
@@ -21,6 +22,7 @@ const BackToTop = lazy(() => import("@/components/BackToTop"));
 const Index = () => {
   return (
     <>
+      <StructuredData />
       <Helmet>
         <title>Kurin Hygienic – Premium Manpower & Facility Management Solutions</title>
         <meta
