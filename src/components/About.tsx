@@ -61,7 +61,7 @@ const About = () => {
     <section id="about" className="py-20 md:py-28 bg-gradient-subtle" ref={ref}>
       <div className="section-container">
         {/* Main Content */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center mb-12 md:mb-20">
           {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -60 }}
@@ -107,10 +107,10 @@ const About = () => {
               initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
               animate={isInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.4, type: "spring", stiffness: 200 }}
-              className="absolute -bottom-8 -right-8 bg-gradient-to-br from-accent to-purple-dark text-white px-8 py-6 rounded-2xl shadow-glow-lg"
+              className="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 bg-gradient-to-br from-accent to-purple-dark text-white px-4 py-3 md:px-8 md:py-6 rounded-xl md:rounded-2xl shadow-glow-lg"
             >
-              <div className="text-4xl font-bold font-display">2018</div>
-              <div className="text-sm opacity-90">Established</div>
+              <div className="text-2xl md:text-4xl font-bold font-display">2018</div>
+              <div className="text-xs md:text-sm opacity-90">Established</div>
             </motion.div>
           </motion.div>
 
@@ -203,7 +203,7 @@ const About = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20"
+          className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 mb-12 md:mb-20"
         >
           {stats.map((stat, index) => (
             <motion.div
@@ -213,11 +213,11 @@ const About = () => {
               transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
               className="relative group"
             >
-              <div className="text-center p-6 rounded-2xl bg-card border border-border hover:border-accent/30 hover:shadow-lg transition-all duration-300">
-                <div className="text-4xl md:text-5xl font-bold font-display text-transparent bg-clip-text bg-gradient-to-br from-accent to-purple-dark mb-2">
+              <div className="text-center p-4 md:p-6 rounded-xl md:rounded-2xl bg-card border border-border hover:border-accent/30 hover:shadow-lg transition-all duration-300">
+                <div className="text-3xl md:text-5xl font-bold font-display text-transparent bg-clip-text bg-gradient-to-br from-accent to-purple-dark mb-1 md:mb-2">
                   <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                 </div>
-                <div className="text-sm text-muted-foreground font-medium">{stat.label}</div>
+                <div className="text-xs md:text-sm text-muted-foreground font-medium">{stat.label}</div>
               </div>
             </motion.div>
           ))}
@@ -233,7 +233,7 @@ const About = () => {
           <h3 className="heading-md text-primary mb-10">
             Our <span className="text-accent">Core Values</span>
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4">
             {values.map((value, index) => (
               <motion.div
                 key={value.label}
@@ -241,19 +241,19 @@ const About = () => {
                 animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
                 whileHover={{ y: -6, scale: 1.02 }}
-                className="group p-6 bg-card rounded-2xl border border-border shadow-sm hover:shadow-xl hover:border-accent/30 transition-all duration-300 cursor-default"
+                className="group p-4 md:p-6 bg-card rounded-xl md:rounded-2xl border border-border shadow-sm hover:shadow-xl hover:border-accent/30 transition-all duration-300 cursor-default"
               >
-                <div className="relative mx-auto mb-4">
-                  <div className="p-4 rounded-2xl bg-gradient-to-br from-accent/10 to-purple-light/10 w-fit mx-auto group-hover:from-accent/20 group-hover:to-purple-light/20 transition-all duration-300">
-                    <value.icon className="w-7 h-7 text-accent group-hover:scale-110 transition-transform duration-300" />
+                <div className="relative mx-auto mb-3 md:mb-4">
+                  <div className="p-3 md:p-4 rounded-xl md:rounded-2xl bg-gradient-to-br from-accent/10 to-purple-light/10 w-fit mx-auto group-hover:from-accent/20 group-hover:to-purple-light/20 transition-all duration-300">
+                    <value.icon className="w-5 h-5 md:w-7 md:h-7 text-accent group-hover:scale-110 transition-transform duration-300" />
                   </div>
                   {/* Glow effect on hover */}
-                  <div className="absolute inset-0 rounded-2xl bg-accent/20 blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
+                  <div className="absolute inset-0 rounded-xl md:rounded-2xl bg-accent/20 blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
                 </div>
-                <h4 className="font-display font-bold text-primary mb-1 group-hover:text-accent transition-colors">
+                <h4 className="font-display font-bold text-primary text-sm md:text-base mb-1 group-hover:text-accent transition-colors">
                   {value.label}
                 </h4>
-                <p className="text-xs text-muted-foreground leading-relaxed">
+                <p className="text-[10px] md:text-xs text-muted-foreground leading-relaxed">
                   {value.description}
                 </p>
               </motion.div>

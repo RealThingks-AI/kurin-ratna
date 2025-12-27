@@ -55,7 +55,7 @@ const Footer = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 mb-12"
         >
           {/* Brand Section */}
           <motion.div
@@ -67,14 +67,14 @@ const Footer = () => {
             <img 
               src={logo} 
               alt="Kurin Hygienic" 
-              className="h-14 w-auto mb-4"
+              className="h-10 md:h-14 w-auto mb-3 md:mb-4"
             />
-            <p className="text-primary-foreground/60 text-sm mb-6 leading-relaxed">
-              Providing comprehensive manpower and facility management solutions since 2018. Your trusted partner for workforce excellence.
+            <p className="text-primary-foreground/60 text-xs md:text-sm mb-4 md:mb-6 leading-relaxed">
+              Providing comprehensive manpower and facility management solutions since 2018.
             </p>
             
             {/* Social Links */}
-            <div className="flex gap-2">
+            <div className="flex gap-1.5 md:gap-2 flex-wrap">
               {socialLinks.map((social, index) => (
                 <motion.a
                   key={social.name}
@@ -86,9 +86,9 @@ const Footer = () => {
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ duration: 0.3, delay: 0.2 + index * 0.1 }}
                   whileHover={{ y: -3, scale: 1.1 }}
-                  className="p-2.5 rounded-xl bg-primary-foreground/10 hover:bg-accent hover:shadow-glow transition-all duration-300 group"
+                  className="p-2 md:p-2.5 rounded-lg md:rounded-xl bg-primary-foreground/10 hover:bg-accent hover:shadow-glow transition-all duration-300 group"
                 >
-                  <social.icon className="w-4 h-4 text-primary-foreground/70 group-hover:text-accent-foreground transition-colors" />
+                  <social.icon className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary-foreground/70 group-hover:text-accent-foreground transition-colors" />
                 </motion.a>
               ))}
             </div>

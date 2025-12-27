@@ -294,13 +294,13 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator - Hidden on mobile */}
       <motion.button
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1 }}
         onClick={handleScrollToServices}
-        className="absolute bottom-36 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-white/60 hover:text-white transition-colors cursor-pointer group"
+        className="hidden md:flex absolute bottom-36 left-1/2 -translate-x-1/2 z-20 flex-col items-center gap-2 text-white/60 hover:text-white transition-colors cursor-pointer group"
         aria-label="Scroll to services"
       >
         <span className="text-xs font-medium tracking-wider uppercase">Explore</span>
@@ -317,10 +317,10 @@ const Hero = () => {
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.7, ease: "easeOut" }}
-        className="absolute bottom-0 left-0 right-0 bg-white/98 backdrop-blur-md py-6 border-t border-border/10 shadow-lg"
+        className="absolute bottom-0 left-0 right-0 bg-white/98 backdrop-blur-md py-3 md:py-6 border-t border-border/10 shadow-lg"
       >
         <div className="w-full px-0">
-          <p className="text-center text-muted-foreground text-xs mb-4 font-semibold tracking-[0.2em] uppercase">
+          <p className="text-center text-muted-foreground text-[10px] md:text-xs mb-2 md:mb-4 font-semibold tracking-[0.15em] md:tracking-[0.2em] uppercase">
             Trusted by Industry Leaders
           </p>
           <div className="relative overflow-hidden w-full">
@@ -330,16 +330,16 @@ const Hero = () => {
             
             <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
               <div className="flex whitespace-nowrap">
-                {clients.map((client) => (
+              {clients.map((client) => (
                   <div
                     key={client.name}
-                    className="flex-shrink-0 px-6 py-3 mx-3 bg-white rounded-xl border border-border/50 shadow-sm hover:shadow-md hover:border-accent/30 transition-all duration-300 flex items-center justify-center min-w-[160px] group"
+                    className="flex-shrink-0 px-3 md:px-6 py-2 md:py-3 mx-1.5 md:mx-3 bg-white rounded-lg md:rounded-xl border border-border/50 shadow-sm hover:shadow-md hover:border-accent/30 transition-all duration-300 flex items-center justify-center min-w-[100px] md:min-w-[160px] group"
                   >
                     <img
                       src={client.logo}
                       alt={client.name}
                       loading="lazy"
-                      className="h-16 w-auto max-w-[140px] object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-80 group-hover:opacity-100"
+                      className="h-10 md:h-16 w-auto max-w-[80px] md:max-w-[140px] object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-80 group-hover:opacity-100"
                     />
                   </div>
                 ))}
@@ -349,13 +349,13 @@ const Hero = () => {
                 {clients.map((client) => (
                   <div
                     key={`${client.name}-dup`}
-                    className="flex-shrink-0 px-6 py-3 mx-3 bg-white rounded-xl border border-border/50 shadow-sm hover:shadow-md hover:border-accent/30 transition-all duration-300 flex items-center justify-center min-w-[160px] group"
+                    className="flex-shrink-0 px-3 md:px-6 py-2 md:py-3 mx-1.5 md:mx-3 bg-white rounded-lg md:rounded-xl border border-border/50 shadow-sm hover:shadow-md hover:border-accent/30 transition-all duration-300 flex items-center justify-center min-w-[100px] md:min-w-[160px] group"
                   >
                     <img
                       src={client.logo}
                       alt={client.name}
                       loading="lazy"
-                      className="h-16 w-auto max-w-[140px] object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-80 group-hover:opacity-100"
+                      className="h-10 md:h-16 w-auto max-w-[80px] md:max-w-[140px] object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-80 group-hover:opacity-100"
                     />
                   </div>
                 ))}

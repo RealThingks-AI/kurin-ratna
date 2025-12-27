@@ -58,25 +58,25 @@ const WhyChooseUs = () => {
         </motion.div>
 
         {/* Features Grid - More Compact */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-10">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative bg-card rounded-xl border border-border p-5 shadow-sm hover:shadow-card hover:-translate-y-1 transition-all duration-300"
+              className="group relative bg-card rounded-xl border border-border p-3 md:p-5 shadow-sm hover:shadow-card hover:-translate-y-1 transition-all duration-300"
             >
               {/* Icon */}
-              <div className="p-3 rounded-lg bg-accent/10 group-hover:bg-accent group-hover:shadow-glow transition-all duration-300 w-fit mb-3">
-                <feature.icon className="w-5 h-5 text-accent group-hover:text-accent-foreground transition-colors" />
+              <div className="p-2 md:p-3 rounded-lg bg-accent/10 group-hover:bg-accent group-hover:shadow-glow transition-all duration-300 w-fit mb-2 md:mb-3">
+                <feature.icon className="w-4 h-4 md:w-5 md:h-5 text-accent group-hover:text-accent-foreground transition-colors" />
               </div>
 
               {/* Content */}
-              <h3 className="font-semibold text-primary mb-2 text-sm">
+              <h3 className="font-semibold text-primary mb-1 md:mb-2 text-xs md:text-sm leading-tight">
                 {feature.title}
               </h3>
-              <p className="text-muted-foreground text-xs leading-relaxed">
+              <p className="text-muted-foreground text-[10px] md:text-xs leading-relaxed hidden md:block">
                 {feature.description}
               </p>
 
