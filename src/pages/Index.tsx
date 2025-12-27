@@ -17,7 +17,6 @@ const FAQ = lazy(() => import("@/components/FAQ"));
 const Contact = lazy(() => import("@/components/Contact"));
 const Footer = lazy(() => import("@/components/Footer"));
 const FloatingButtons = lazy(() => import("@/components/FloatingButtons"));
-const BackToTop = lazy(() => import("@/components/BackToTop"));
 
 const Index = () => {
   return (
@@ -82,7 +81,6 @@ const Index = () => {
         
         <Suspense fallback={null}>
           <FloatingButtons />
-          <BackToTop />
         </Suspense>
       </main>
     </>
