@@ -434,12 +434,46 @@ const Contact = () => {
               </motion.div>
             </div>
 
+            {/* Google Map */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="mt-6"
+            >
+              <h4 className="font-display font-semibold text-primary mb-4">
+                Find Us Here
+              </h4>
+              <div className="rounded-2xl overflow-hidden border border-border shadow-lg">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.4847408037344!2d73.7856!3d18.6466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9e76c8fa205%3A0x71d2460990634769!2sSwami%20Plaza%2C%20Shahunagar%2C%20Chinchwad%2C%20Pimpri-Chinchwad%2C%20Maharashtra%20411019!5e0!3m2!1sen!2sin!4v1703000000000!5m2!1sen!2sin"
+                  width="100%"
+                  height="200"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Kurin Hygienic Office Location"
+                  className="w-full"
+                />
+              </div>
+              <a
+                href="https://maps.app.goo.gl/6QVwaWUMcn8pUnEb6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-3 text-sm text-accent hover:text-accent/80 transition-colors"
+              >
+                <MapPin className="w-4 h-4" />
+                Open in Google Maps
+              </a>
+            </motion.div>
+
             {/* Social Links */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              className="mt-10"
+              transition={{ duration: 0.5, delay: 0.7 }}
+              className="mt-8"
             >
               <h4 className="font-display font-semibold text-primary mb-4">
                 Follow Us
@@ -454,7 +488,7 @@ const Contact = () => {
                     aria-label={`Follow us on ${social.name}`}
                     initial={{ opacity: 0, y: 10 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.3, delay: 0.7 + index * 0.1 }}
+                    transition={{ duration: 0.3, delay: 0.8 + index * 0.1 }}
                     whileHover={{ y: -4, scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     className="p-3 rounded-xl bg-accent/10 hover:bg-accent hover:shadow-glow transition-all duration-300 group"
