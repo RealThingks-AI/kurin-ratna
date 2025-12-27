@@ -1,6 +1,12 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 import societyImg from "@/assets/industries/society-maintenance-new.jpg";
 import mepImg from "@/assets/industries/mep-services-new.jpg";
@@ -17,26 +23,104 @@ import manufacturingImg from "@/assets/industries/manufacturing-new.jpg";
 import tradingImg from "@/assets/industries/trading-new.jpg";
 import financeImg from "@/assets/industries/finance-new.jpg";
 
-const industries = [
-  { name: "Society Maintenance", image: societyImg },
-  { name: "MEP Services", image: mepImg },
-  { name: "Hospitality", image: hospitalityImg },
-  { name: "Construction & Infrastructure", image: constructionImg },
-  { name: "Hotels", image: hotelsImg },
-  { name: "Air Conditioning & Refrigeration", image: acImg },
-  { name: "Retail & Malls", image: retailImg },
-  { name: "Power Plants", image: powerImg },
-  { name: "Agriculture", image: agricultureImg },
-  { name: "Government Sector", image: governmentImg },
-  { name: "Hypermarket", image: hypermarketImg },
-  { name: "Manufacturing", image: manufacturingImg },
-  { name: "Trading Companies", image: tradingImg },
-  { name: "Account & Finance", image: financeImg },
+interface Industry {
+  name: string;
+  image: string;
+  description: string;
+  services: string[];
+}
+
+const industries: Industry[] = [
+  { 
+    name: "Society Maintenance", 
+    image: societyImg,
+    description: "Comprehensive manpower solutions for residential societies and housing complexes, ensuring smooth day-to-day operations and resident satisfaction.",
+    services: ["Security Personnel", "Housekeeping Staff", "Maintenance Workers", "Gardeners", "Reception & Concierge"]
+  },
+  { 
+    name: "MEP Services", 
+    image: mepImg,
+    description: "Skilled workforce for Mechanical, Electrical, and Plumbing projects, supporting complex infrastructure installations and maintenance.",
+    services: ["Electricians", "Plumbers", "HVAC Technicians", "Fire Safety Personnel", "Project Supervisors"]
+  },
+  { 
+    name: "Hospitality", 
+    image: hospitalityImg,
+    description: "Trained hospitality professionals to deliver exceptional guest experiences in restaurants, cafes, and food service establishments.",
+    services: ["Chefs & Cooks", "Waiters & Servers", "Kitchen Helpers", "Housekeeping", "Front Desk Staff"]
+  },
+  { 
+    name: "Construction & Infrastructure", 
+    image: constructionImg,
+    description: "Reliable construction workforce for building projects of all scales, from residential to commercial developments.",
+    services: ["Masons & Carpenters", "Site Supervisors", "Helpers & Laborers", "Safety Officers", "Equipment Operators"]
+  },
+  { 
+    name: "Hotels", 
+    image: hotelsImg,
+    description: "Premium staffing solutions for hotels and resorts, ensuring world-class service delivery to guests.",
+    services: ["Front Office Staff", "Housekeeping Teams", "F&B Service", "Kitchen Staff", "Maintenance Crew"]
+  },
+  { 
+    name: "Air Conditioning & Refrigeration", 
+    image: acImg,
+    description: "Technical workforce for HVAC and refrigeration systems installation, maintenance, and repair services.",
+    services: ["AC Technicians", "Refrigeration Experts", "Installation Teams", "Service Engineers", "Maintenance Staff"]
+  },
+  { 
+    name: "Retail & Malls", 
+    image: retailImg,
+    description: "Dynamic retail staff to enhance customer shopping experience and drive sales in retail environments.",
+    services: ["Sales Associates", "Store Managers", "Visual Merchandisers", "Security Personnel", "Housekeeping"]
+  },
+  { 
+    name: "Power Plants", 
+    image: powerImg,
+    description: "Specialized technical workforce for power generation facilities, ensuring safe and efficient operations.",
+    services: ["Plant Operators", "Maintenance Engineers", "Safety Officers", "Technical Assistants", "Control Room Staff"]
+  },
+  { 
+    name: "Agriculture", 
+    image: agricultureImg,
+    description: "Agricultural workforce for farming operations, from cultivation to harvest and processing.",
+    services: ["Farm Workers", "Equipment Operators", "Supervisors", "Quality Controllers", "Warehouse Staff"]
+  },
+  { 
+    name: "Government Sector", 
+    image: governmentImg,
+    description: "Compliant manpower solutions for government projects and public sector undertakings with full statutory adherence.",
+    services: ["Administrative Staff", "Data Entry Operators", "Field Workers", "Security Personnel", "Housekeeping"]
+  },
+  { 
+    name: "Hypermarket", 
+    image: hypermarketImg,
+    description: "Efficient retail workforce for large-format stores and supermarkets, ensuring smooth operations.",
+    services: ["Cashiers", "Stock Associates", "Customer Service", "Warehouse Staff", "Department Supervisors"]
+  },
+  { 
+    name: "Manufacturing", 
+    image: manufacturingImg,
+    description: "Skilled and semi-skilled workforce for manufacturing units across various production environments.",
+    services: ["Machine Operators", "Quality Inspectors", "Assembly Workers", "Supervisors", "Maintenance Staff"]
+  },
+  { 
+    name: "Trading Companies", 
+    image: tradingImg,
+    description: "Business support staff for trading and distribution companies, streamlining operations and logistics.",
+    services: ["Sales Executives", "Warehouse Staff", "Logistics Coordinators", "Admin Support", "Data Entry"]
+  },
+  { 
+    name: "Account & Finance", 
+    image: financeImg,
+    description: "Qualified finance professionals for accounting, auditing, and financial management roles.",
+    services: ["Accountants", "Bookkeepers", "Audit Assistants", "Data Entry Operators", "Finance Executives"]
+  },
 ];
 
 const Industries = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [selectedIndustry, setSelectedIndustry] = useState<Industry | null>(null);
 
   return (
     <section id="industries" className="section-padding bg-slate-100" ref={ref}>
@@ -70,6 +154,7 @@ const Industries = () => {
               transition={{ duration: 0.5, delay: index * 0.05 }}
               whileHover={{ scale: 1.03, y: -4 }}
               className="group relative overflow-hidden rounded-xl cursor-pointer"
+              onClick={() => setSelectedIndustry(industry)}
             >
               <div className="relative overflow-hidden h-28 md:h-36">
                 <img
@@ -95,6 +180,47 @@ const Industries = () => {
           ))}
         </div>
       </div>
+
+      {/* Industry Detail Modal */}
+      <Dialog open={!!selectedIndustry} onOpenChange={() => setSelectedIndustry(null)}>
+        <DialogContent className="sm:max-w-lg">
+          {selectedIndustry && (
+            <>
+              <div className="relative h-48 -mx-6 -mt-6 mb-4 overflow-hidden rounded-t-lg">
+                <img
+                  src={selectedIndustry.image}
+                  alt={selectedIndustry.name}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+              </div>
+              <DialogHeader>
+                <DialogTitle className="text-xl font-display text-foreground">
+                  {selectedIndustry.name}
+                </DialogTitle>
+              </DialogHeader>
+              <div className="space-y-4">
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {selectedIndustry.description}
+                </p>
+                <div>
+                  <h4 className="font-semibold text-foreground mb-2 text-sm">Services We Provide:</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedIndustry.services.map((service) => (
+                      <span
+                        key={service}
+                        className="px-3 py-1 text-xs font-medium rounded-full bg-accent/10 text-accent"
+                      >
+                        {service}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
