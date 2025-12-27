@@ -291,30 +291,6 @@ const Hero = () => {
             </a>
           </motion.div>
 
-          {/* Stats Row */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex flex-wrap items-center justify-center gap-8 md:gap-12 mt-12"
-          >
-            {[
-              { value: "7+", label: "Years Experience" },
-              { value: "500+", label: "Staff Deployed" },
-              { value: "50+", label: "Happy Clients" },
-            ].map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                className="text-center"
-              >
-                <div className="text-3xl md:text-4xl font-bold text-white font-display">{stat.value}</div>
-                <div className="text-sm text-white/60 mt-1">{stat.label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
         </div>
       </div>
 
