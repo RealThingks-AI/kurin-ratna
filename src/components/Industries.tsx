@@ -2,21 +2,36 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
+import societyImg from "@/assets/industries/society-maintenance.jpg";
+import mepImg from "@/assets/industries/mep-services.jpg";
+import hospitalityImg from "@/assets/industries/hospitality.jpg";
+import constructionImg from "@/assets/industries/construction.jpg";
+import hotelsImg from "@/assets/industries/hotels.jpg";
+import acImg from "@/assets/industries/ac-refrigeration.jpg";
+import retailImg from "@/assets/industries/retail-malls.jpg";
+import powerImg from "@/assets/industries/power-plants.jpg";
+import agricultureImg from "@/assets/industries/agriculture.jpg";
+import governmentImg from "@/assets/industries/government.jpg";
+import hypermarketImg from "@/assets/industries/hypermarket.jpg";
+import manufacturingImg from "@/assets/industries/manufacturing.jpg";
+import tradingImg from "@/assets/industries/trading.jpg";
+import financeImg from "@/assets/industries/finance.jpg";
+
 const industries = [
-  { name: "Society Maintenance", image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&h=300&fit=crop" },
-  { name: "MEP Services", description: "Mechanical, Electrical & Plumbing", image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=400&h=300&fit=crop" },
-  { name: "Hospitality", image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop" },
-  { name: "Construction & Infrastructure", image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=300&fit=crop" },
-  { name: "Hotels", image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=400&h=300&fit=crop" },
-  { name: "Air Conditioning & Refrigeration", image: "https://images.unsplash.com/photo-1631545308938-f9e3a2aad89c?w=400&h=300&fit=crop" },
-  { name: "Retail & Malls", image: "https://images.unsplash.com/photo-1519566335946-e6f65f0f4fdf?w=400&h=300&fit=crop" },
-  { name: "Power Plants", image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=400&h=300&fit=crop" },
-  { name: "Agriculture", image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&h=300&fit=crop" },
-  { name: "Government Sector", image: "https://images.unsplash.com/photo-1523292562811-8fa7962a78c8?w=400&h=300&fit=crop" },
-  { name: "Hypermarket", image: "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=400&h=300&fit=crop" },
-  { name: "Manufacturing", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop" },
-  { name: "Trading Companies", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop" },
-  { name: "Account & Finance", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop" },
+  { name: "Society Maintenance", image: societyImg },
+  { name: "MEP Services", image: mepImg },
+  { name: "Hospitality", image: hospitalityImg },
+  { name: "Construction & Infrastructure", image: constructionImg },
+  { name: "Hotels", image: hotelsImg },
+  { name: "Air Conditioning & Refrigeration", image: acImg },
+  { name: "Retail & Malls", image: retailImg },
+  { name: "Power Plants", image: powerImg },
+  { name: "Agriculture", image: agricultureImg },
+  { name: "Government Sector", image: governmentImg },
+  { name: "Hypermarket", image: hypermarketImg },
+  { name: "Manufacturing", image: manufacturingImg },
+  { name: "Trading Companies", image: tradingImg },
+  { name: "Account & Finance", image: financeImg },
 ];
 
 const Industries = () => {
@@ -24,7 +39,7 @@ const Industries = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="industries" className="section-padding bg-light-gray" ref={ref}>
+    <section id="industries" className="section-padding bg-slate-100" ref={ref}>
       <div className="section-container">
         {/* Header */}
         <motion.div
@@ -69,7 +84,7 @@ const Industries = () => {
                 {/* Text */}
                 <div className="absolute inset-0 flex items-end p-3">
                   <div className="w-full">
-                    <h3 className="font-display font-bold text-primary-foreground text-xs md:text-sm leading-tight">
+                    <h3 className="font-display font-bold text-white text-xs md:text-sm leading-tight">
                       {industry.name}
                     </h3>
                     <div className="h-0.5 w-0 group-hover:w-8 bg-accent transition-all duration-300 mt-1" />
