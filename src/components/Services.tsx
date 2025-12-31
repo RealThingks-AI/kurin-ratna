@@ -1,109 +1,64 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-import {
-  Users,
-  Building2,
-  Sparkles,
-  Wrench,
-  ShieldCheck,
-  HardHat,
-  Coffee,
-  MessageCircle,
-  CheckCircle2,
-  Clock,
-  Calendar,
-  FileText,
-  ArrowRight,
-} from "lucide-react";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import { Snowflake, Wind, Gauge, Wrench, Settings, Shield, CheckCircle2, Clock, Calendar, ArrowRight } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 
 const services = [
   {
-    icon: Users,
-    title: "Staff & Payroll Outsourcing",
-    description:
-      "Outsourcing is changing business worldwide. We take the most time-consuming financial functions off your hands and handle them faster, more accurately and at lower cost than you can in-house.",
-    features: ["Recruitment & Onboarding", "Payroll Management", "Compliance Handling", "HR Administration"],
-    popular: true,
+    icon: Snowflake,
+    title: "AC Servicing",
+    price: "₹399",
+    description: "Complete AC servicing to ensure optimal cooling performance. Regular maintenance extends your AC's lifespan and reduces energy costs.",
+    features: ["Filter cleaning & replacement", "Coil inspection & cleaning", "Refrigerant level check", "Performance optimization"],
+    popular: true
   },
   {
-    icon: HardHat,
-    title: "Labour Supply",
-    description:
-      "Reliable and skilled labour workforce for construction, manufacturing, and industrial projects. Trained workers available on-demand for short and long-term requirements.",
-    features: ["Skilled Workers", "Semi-skilled Labour", "Helper Staff", "On-demand Availability"],
+    icon: Wind,
+    title: "Deep Cleaning",
+    price: "₹599",
+    description: "Thorough internal cleaning for maximum efficiency. Removes dust, mold, and bacteria buildup for healthier air quality.",
+    features: ["Complete internal cleaning", "Coil sanitization", "Drain pipe cleaning", "Anti-bacterial treatment"]
   },
   {
-    icon: Building2,
-    title: "Corporate Housekeeping",
-    description:
-      "We provide housekeeping services for corporate office, office campus, hospitals, multiplexes, shopping malls. Our trained personnel consistently work towards exceeding client needs.",
-    features: [
-      "Dusting of windowsills & ledges",
-      "Removing cobwebs",
-      "Vacuuming furniture",
-      "Cleaning telephones & intercoms",
-    ],
-  },
-  {
-    icon: Sparkles,
-    title: "Washroom Hygiene Management",
-    description:
-      "Complete washroom care including cleaning, sanitizing and deodorizing. We clean vanities, sinks, mirrors, showers, bathtubs, floors and tile walls at required intervals.",
-    features: [
-      "Sanitize & Deodorize",
-      "Vanities & Sinks Cleaning",
-      "Mirror Cleaning",
-      "Floor & Tile Walls Washing",
-    ],
-  },
-  {
-    icon: Building2,
-    title: "Floor Care Services",
-    description:
-      "Shopping malls, multiplexes and big retail outlets - we handle crubbing, polishing and cleaning schedule with professional manner. Trained staff and personal supervision on day to day basis.",
-    features: [
-      "Wet & Dry Mopping",
-      "High Pressure Jet Machine",
-      "Carpet Vacuuming",
-      "Road Sweeping & Garbage Clearing",
-    ],
+    icon: Gauge,
+    title: "Gas Refill",
+    price: "₹2,500",
+    description: "Professional refrigerant gas refilling service. We detect leaks, repair them, and recharge with genuine R32/R410A gas.",
+    features: ["Leak detection & repair", "R32/R410A gas refill", "Pressure testing", "Performance verification"]
   },
   {
     icon: Wrench,
-    title: "MEP & Technical Services",
-    description:
-      "Complete MEP support including mechanical, electrical, and plumbing systems. Also covers painting, carpentry, civil work, pest control, and AC maintenance.",
-    features: ["Electrical & Plumbing", "AC Maintenance", "Painting & Carpentry", "Pest Control"],
+    title: "AC Repair",
+    price: "Based on issue",
+    description: "Expert diagnosis and repair of all AC problems. Our technicians are trained to handle all brands and models.",
+    features: ["Compressor repair/replacement", "PCB & circuit repairs", "Sensor troubleshooting", "All brand expertise"]
   },
   {
-    icon: ShieldCheck,
-    title: "Professional Security Services",
-    description:
-      "Trained and verified security personnel for all environments. Services include bouncers, personal security officers (PSO), residential, and commercial security.",
-    features: ["Corporate Security", "Residential Guards", "Bouncer Services", "Personal Security Officers"],
+    icon: Settings,
+    title: "AC Installation",
+    price: "₹1,500",
+    description: "Professional AC installation with proper mounting, piping, and electrical work. We ensure optimal placement for maximum efficiency.",
+    features: ["Professional mounting", "Copper piping work", "Electrical wiring", "Gas charging & testing"]
   },
   {
-    icon: Coffee,
-    title: "Pantry & Cafeteria Services",
-    description:
-      "Professional pantry boys and cafeteria staff to manage your office refreshments and food services. Trained personnel ensuring hygiene and prompt service.",
-    features: ["Pantry Management", "Tea/Coffee Service", "Cafeteria Staff", "Event Catering Support"],
-  },
+    icon: Shield,
+    title: "AMC Plans",
+    price: "₹2,499/year",
+    description: "Annual Maintenance Contracts for hassle-free AC care. Regular scheduled visits and priority support included.",
+    features: ["Scheduled maintenance", "Priority service", "Discounted repairs", "Extended warranty"]
+  }
 ];
 
 type Service = typeof services[number];
 
 const Services = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, {
+    once: true,
+    margin: "-100px"
+  });
   const [selectedService, setSelectedService] = useState<Service | null>(null);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
@@ -113,9 +68,9 @@ const Services = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.08,
-        delayChildren: 0.2,
-      },
-    },
+        delayChildren: 0.2
+      }
+    }
   };
 
   const itemVariants = {
@@ -126,14 +81,14 @@ const Services = () => {
       scale: 1,
       transition: {
         duration: 0.5,
-        ease: "easeOut" as const,
-      },
-    },
+        ease: "easeOut" as const
+      }
+    }
   };
 
   const handleWhatsApp = (serviceName: string) => {
-    const message = encodeURIComponent(`Enquiry for ${serviceName}`);
-    window.open(`https://wa.me/917038613623?text=${message}`, "_blank");
+    const message = encodeURIComponent(`Hi, I'm interested in ${serviceName}. Please provide more details.`);
+    window.open(`https://wa.me/919876543210?text=${message}`, "_blank");
   };
 
   const handleRequestQuote = (serviceName: string) => {
@@ -168,24 +123,24 @@ const Services = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-2xl mx-auto mb-16"
           >
-            <motion.span 
+            <motion.span
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="inline-flex items-center gap-2 px-4 py-2 mb-4 text-sm font-semibold rounded-full bg-accent/10 text-accent border border-accent/20"
             >
-              <Sparkles className="w-4 h-4" />
-              What We Do
+              <Snowflake className="w-4 h-4" />
+              Our Services
             </motion.span>
             <h2 className="heading-lg text-primary mb-5">
               Comprehensive{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-dark">
-                Facility Solutions
+                AC Solutions
               </span>
             </h2>
             <p className="text-body">
-              From staffing to security, we provide end-to-end workforce and facility management services
-              tailored to your business needs.
+              Professional AC servicing, repair, and maintenance for homes and businesses.
+              Transparent pricing with no hidden charges.
             </p>
           </motion.div>
 
@@ -194,7 +149,7 @@ const Services = () => {
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5"
+            className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5"
           >
             {services.map((service, index) => (
               <motion.div
@@ -203,7 +158,7 @@ const Services = () => {
                 onClick={() => setSelectedService(service)}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                onKeyDown={(e) => {
+                onKeyDown={e => {
                   if (e.key === "Enter" || e.key === " ") {
                     e.preventDefault();
                     setSelectedService(service);
@@ -219,11 +174,7 @@ const Services = () => {
                 <div className="absolute inset-[1px] rounded-2xl bg-card" />
                 
                 {/* Glow Effect */}
-                <div 
-                  className={`absolute -inset-1 rounded-2xl bg-gradient-to-br from-accent/30 to-purple-dark/30 blur-xl transition-opacity duration-500 ${
-                    hoveredIndex === index ? "opacity-40" : "opacity-0"
-                  }`} 
-                />
+                <div className={`absolute -inset-1 rounded-2xl bg-gradient-to-br from-accent/30 to-purple-dark/30 blur-xl transition-opacity duration-500 ${hoveredIndex === index ? "opacity-40" : "opacity-0"}`} />
 
                 {/* Content */}
                 <div className="relative z-10">
@@ -241,10 +192,16 @@ const Services = () => {
                     <service.icon className="w-5 h-5 md:w-6 md:h-6 text-accent group-hover:text-white transition-colors duration-300" />
                   </div>
 
-                  {/* Title */}
-                  <h3 className="font-display font-bold text-primary mb-2 md:mb-3 text-sm md:text-lg leading-tight group-hover:text-accent transition-colors duration-300">
+                  {/* Title & Price */}
+                  <h3 className="font-display font-bold text-primary mb-1 md:mb-2 text-sm md:text-lg leading-tight group-hover:text-accent transition-colors duration-300">
                     {service.title}
                   </h3>
+                  
+                  {/* Price Tag */}
+                  <div className="mb-2 md:mb-3">
+                    <span className="text-xs md:text-sm text-muted-foreground">Starting from</span>
+                    <p className="text-lg md:text-2xl font-bold text-accent">{service.price}</p>
+                  </div>
                   
                   {/* Description - Hidden on mobile */}
                   <p className="hidden md:block text-muted-foreground mb-4 leading-relaxed text-sm line-clamp-2">
@@ -253,11 +210,8 @@ const Services = () => {
 
                   {/* Features Preview - Hidden on mobile */}
                   <div className="hidden md:flex flex-wrap gap-1.5 mb-4">
-                    {service.features.slice(0, 2).map((feature) => (
-                      <span
-                        key={feature}
-                        className="inline-block px-2.5 py-1 text-[11px] font-medium rounded-lg bg-accent/10 text-accent"
-                      >
+                    {service.features.slice(0, 2).map(feature => (
+                      <span key={feature} className="inline-block px-2.5 py-1 text-[11px] font-medium rounded-lg bg-accent/10 text-accent">
                         {feature}
                       </span>
                     ))}
@@ -302,11 +256,7 @@ const Services = () => {
                     <DialogTitle className="text-xl font-display font-bold text-primary">
                       {selectedService.title}
                     </DialogTitle>
-                    {selectedService.popular && (
-                      <span className="inline-block mt-1 px-2 py-0.5 text-[10px] font-bold rounded-full bg-accent text-accent-foreground">
-                        MOST POPULAR
-                      </span>
-                    )}
+                    <p className="text-2xl font-bold text-accent mt-1">{selectedService.price}</p>
                   </div>
                 </div>
               </DialogHeader>
@@ -321,8 +271,8 @@ const Services = () => {
                     <CheckCircle2 className="w-4 h-4 text-accent" />
                     What's Included:
                   </h4>
-                  <ul className="grid grid-cols-2 gap-2">
-                    {selectedService.features.map((feature) => (
+                  <ul className="grid grid-cols-1 gap-2">
+                    {selectedService.features.map(feature => (
                       <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
                         <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
                         {feature}
@@ -335,11 +285,11 @@ const Services = () => {
                 <div className="flex flex-wrap gap-3">
                   <div className="flex items-center gap-2 px-4 py-2.5 bg-gradient-subtle rounded-xl border border-border">
                     <Clock className="w-4 h-4 text-accent" />
-                    <span className="text-sm font-medium text-foreground">Response: Within 2 hours</span>
+                    <span className="text-sm font-medium text-foreground">Same-day service</span>
                   </div>
                   <div className="flex items-center gap-2 px-4 py-2.5 bg-gradient-subtle rounded-xl border border-border">
                     <Calendar className="w-4 h-4 text-accent" />
-                    <span className="text-sm font-medium text-foreground">Available: 24/7</span>
+                    <span className="text-sm font-medium text-foreground">7 days a week</span>
                   </div>
                 </div>
 
@@ -350,8 +300,7 @@ const Services = () => {
                     className="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg shadow-emerald-500/20"
                     size="lg"
                   >
-                    <MessageCircle className="w-4 h-4 mr-2" />
-                    Enquire on WhatsApp
+                    WhatsApp Us
                   </Button>
                   <Button
                     onClick={() => handleRequestQuote(selectedService.title)}
@@ -359,8 +308,7 @@ const Services = () => {
                     className="flex-1"
                     size="lg"
                   >
-                    <FileText className="w-4 h-4 mr-2" />
-                    Request a Quote
+                    Book Now
                   </Button>
                 </div>
               </div>
