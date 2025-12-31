@@ -73,7 +73,7 @@ const Clients = () => {
             Trusted by <span className="text-accent">Industry Leaders</span>
           </h2>
           <p className="text-body">
-            Kurin Hygienic's satisfied clients include many institutions and businesses in your community. 
+            Comfort Technical Services' satisfied clients include many institutions and businesses in your community. 
             We take pride in building long-term relationships with our partners.
           </p>
         </motion.div>
